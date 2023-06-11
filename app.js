@@ -14,12 +14,16 @@ app.use(
     })
    );
    
-app.use(
+   app.use(
     cors({
-        credentials: true,
-        origin: "http://localhost:3000",
-     })
-);
+      credentials: true,
+      origin: (origin, callback) => {
+        callback(null, true);
+      },
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], 
+      })
+    );
+
 app.use(express.json());
 const port = process.env.PORT || 4000;
 TuitsController(app);

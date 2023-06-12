@@ -21,8 +21,8 @@ app.use(
         callback(null, true);
       },
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], 
-      })
-    );
+      })
+    );
 
 app.use(express.json());
 const port = process.env.PORT || 4000;

@@ -5,6 +5,8 @@ import HelloController from "./controllers/hello-controller.js"
 import UserController from "./users/users-controller.js"
 import TuitsController from "./controllers/tuits/tuits-controller.js";
 import AuthController from "./users/auth-controller.js";
+import mongoose from "mongoose";
+mongoose.connect("mongodb+srv://shravgop:shravan@cluster0.c327mwd.mongodb.net/?retryWrites=true&w=majority"||"mongodb://127.0.0.1:27017/tuiter");
 const app = express()
 app.use(
     session({
@@ -31,5 +33,6 @@ HelloController(app);
 UserController(app);
 AuthController(app);
 app.listen(process.env.PORT || 4000);
+
 
 
